@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhập tuổi và in ra kết quả nếu tuổi học sinh đó không đủ điều kiện vào học lớp 10.</title>
+</head>
+<body>
+    <label>
+        <p>Mời nhập số tuổi học sinh:</p>
+        <input type="number" id="age">
+    </label>
+    <label>
+        <input type="button" value="Check" onclick="exe1()">
+    </label>
+    <p id="result"></p>
+</body>
+<script>
+    function exe1(){
+        let age = Number(document.getElementById('age').value)
+        let text = ''
+        if(age >= 14){
+            text = 'Học sinh đủ tuổi vào lớp 10'
+        }
+        else
+        {
+            text = 'Học sinh chưa đủ tuổi vào lớp 10'
+        }
+        document.getElementById('result').innerHTML = text
+    }
+</script>
+</html>

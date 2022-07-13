@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhập vào hai số a và b, và kiểm tra xem a có chia hết cho b hay không</title>
+</head>
+<body>
+    <label>
+        <p>Nhập a và b</p>
+        <input type="number" id="a">
+    </label>
+    <label>
+        <input type="number" id="b">
+    </label>
+    <label>
+        <input type="button" value="Check" onclick="exe1()">
+    </label>
+    <p id="result"></p>
+</body>
+<script>
+    function exe1(){
+        let a = Number(document.getElementById('a').value)
+    let b = Number(document.getElementById('b').value)
+    let text = ''
+        if(a % b == 0){
+            text = a + ' chia hết cho ' + b
+        }
+        else if(a == '' || b == '')
+        {
+            text = 'Mời nhập a và b'
+        }
+        else
+        {
+            text =  a + ' không chia hết cho ' + b
+        }
+        document.getElementById('result').innerHTML = text
+    }
+</script>
+</html>

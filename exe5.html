@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ</title>
+</head>
+<body>
+    <label>
+        <p>Điểm kiểm tra: </p>
+        <input type="number" id="number1">
+    </label>
+    <label>
+        <p>Điểm thi giữa kỳ: </p>
+        <input type="number" id="number2">
+    </label>
+    <label>
+        <p>Điểm thi cuối kỳ c: </p>
+        <input type="number" id="number3">
+    </label>
+    <label>
+        <input type="button" value="Check" onclick="doFunction()">
+    </label>
+    <p id="result"></p>
+</body>
+<script>
+    function doFunction(){
+        let kiemtra = Number(document.getElementById('number1').value)
+        let giuaky = Number(document.getElementById('number2').value)
+        let cuoiky = Number(document.getElementById('number3').value)
+        let trungbinh = (kiemtra + (giuaky*2) + (cuoiky*3)) /6
+        let text = ''
+        if(trungbinh < 5){
+            text = 'Học sinh yếu'
+        }
+        else if(trungbinh < 6.5){
+            text = 'Học sinh trung bình'
+        }
+        else if(trungbinh < 8){
+            text = 'Học sinh khá'
+        }
+        else if(trungbinh >= 8 && trungbinh <= 10){
+            text = 'Học sinh giỏi'
+        }
+        else
+        {
+            text = 'Ngoài tầm của bộ giáo dục'
+        }
+        document.getElementById('result').innerHTML = text
+    }
+</script>
+</html>

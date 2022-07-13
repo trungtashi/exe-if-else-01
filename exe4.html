@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó
+
+    </title>
+</head>
+<body>
+    <label>
+        <p>Mời nhập số a: </p>
+        <input type="number" id="number1">
+    </label>
+    <label>
+        <p>Mời nhập số b: </p>
+        <input type="number" id="number2">
+    </label>
+    <label>
+        <p>Mời nhập số c: </p>
+        <input type="number" id="number3">
+    </label>
+    <label>
+        <input type="button" value="Check" onclick="doFunction()">
+    </label>
+    <p id="result"></p>
+</body>
+<script>
+    function doFunction(){
+        let a = Number(document.getElementById('number1').value)
+        let b = Number(document.getElementById('number2').value)
+        let c = Number(document.getElementById('number3').value)
+        let text = ''
+       if(a > b && a > c){
+            text = a + ' là số lớn nhất'
+       }
+       else if(b > a && b > c)
+       {
+            text = b + ' là số lớn nhất'
+       }
+       else if(c > a && c > b){
+        text = c + ' là số lớn nhất'
+       }
+       else{
+        text = '3 số bằng nhau'
+       }
+        document.getElementById('result').innerHTML = text
+    }
+</script>
+</html>
